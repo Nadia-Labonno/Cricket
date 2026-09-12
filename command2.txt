@@ -1,0 +1,50 @@
+cd Desktop
+git clone https://github.com/YOUR-USERNAME/Cricket.git
+cd Cricket
+
+echo "This is File 1." > File1.txt
+echo "This is File 2." > File2.txt
+
+git add File1.txt File2.txt
+git commit -m "Create File1 and File2"
+
+git status
+
+echo "This is the updated File 1." >> File1.txt
+git status
+
+git add File1.txt
+git commit -m "Update File1"
+
+echo "This is the updated File 2." >> File2.txt
+git add File2.txt
+git commit -m "Update File2"
+
+git log -- File1.txt
+git log -- File2.txt
+
+git branch Branch1
+git branch Branch2
+
+git checkout Branch1
+
+echo "Changed File2 in Branch1." >> File2.txt
+git log -- File2.txt
+git add File2.txt
+git commit -m "Change File2 in Branch1"
+
+git checkout Branch2
+
+echo "Changed File1 in Branch2." >> File1.txt
+git add File1.txt
+git commit -m "Change File1 in Branch2"
+
+git checkout master
+
+git merge Branch1
+git merge Branch2
+
+git status
+
+git pull origin master
+git push origin master
